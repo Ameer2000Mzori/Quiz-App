@@ -18,7 +18,7 @@
 
 # 📖 About This Project <a name="about-project"></a>
 
-> GitHub Profiles A website built with HTML, SCSS, and TypeScript, utilizing the GitHub API and Axios for seamless data retrieval. Linters are employed to maintain clean code. Explore the live demo to search for any GitHub user.
+> Quiz-App is a website carefully crafted using HTML, SCSS, and TypeScript. Our development process incorporates the use of linters to detect and resolve code errors, ensuring the upkeep of clean and efficient code. Take a moment to explore the live demo for a firsthand experience.
 
 # Sample Of Website <a name="Sample-Of-Website"></a>
 
