@@ -39,3 +39,4 @@ var QuestionsObject = [
 ];
 // our functions
 // our event linsters
+submitBtn.addEventListener("click", function () { });
