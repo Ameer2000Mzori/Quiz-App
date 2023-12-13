@@ -91,5 +91,38 @@ body {
         }
       }
     }
+
+    .button-Wrap {
+      height: 40%;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .submit-Btn {
+        padding: 10px 50px;
+        border-radius: 1rem;
+        border: solid $colorThree 2px;
+        font-family: $fontOne;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 100ms ease-in-out;
+      }
+
+      .submit-Btn:hover {
+        border: solid $colorTwo 5px;
+        background-color: $colorThree;
+        color: $colorOne;
+        transform: scale(1.1);
+      }
+
+      .submit-Btn:active {
+        transform: scale(0.9);
+        background-color: white;
+        color: $colorTwo;
+      }
+    }
   }
 }

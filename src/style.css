@@ -86,3 +86,36 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.header .head .button-Wrap {
+  height: 40%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header .head .button-Wrap .submit-Btn {
+  padding: 10px 50px;
+  border-radius: 1rem;
+  border: solid #b2a59b 2px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 100ms ease-in-out;
+}
+
+.header .head .button-Wrap .submit-Btn:hover {
+  border: solid #ded0b6 5px;
+  background-color: #b2a59b;
+  color: #faeed1;
+  transform: scale(1.1);
+}
+
+.header .head .button-Wrap .submit-Btn:active {
+  transform: scale(0.9);
+  background-color: white;
+  color: #ded0b6;
+}
