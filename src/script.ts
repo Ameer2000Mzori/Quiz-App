@@ -14,6 +14,33 @@ const submitBtn = document.getElementsByClassName("submit-Btn")[0];
 
 // our object Quastions
 
+const QuestionsObject = [
+  {
+    Questions: `what is red?`,
+    a: `color`,
+    b: `name`,
+    c: `car`,
+    d: `dance`,
+    correct: "A",
+  },
+  {
+    Questions: `from what is a car created`,
+    a: `plastic`,
+    b: `stone`,
+    c: `metal`,
+    d: `scrab`,
+    correct: "C",
+  },
+  {
+    Questions: `where is The Nehterlands`,
+    a: `Asia`,
+    b: `Europe`,
+    c: `North Amarica`,
+    d: `South Amarica`,
+    correct: "B",
+  },
+];
+
 // our functions
 
 // our event linsters
