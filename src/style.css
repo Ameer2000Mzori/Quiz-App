@@ -43,3 +43,46 @@ body {
   font-size: 25px;
   font-family: "Roboto", sans-serif;
 }
+
+.header .head .quastions-Wrap {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header .head .quastions-Wrap ul {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.header .head .quastions-Wrap ul li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  justify-content: start;
+  width: 80%;
+  height: 20%;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.header .head .quastions-Wrap ul li input {
+  padding: 0;
+  margin: 0;
+}
