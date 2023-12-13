@@ -12,6 +12,7 @@ body {
   align-items: center;
   height: 100vh;
   justify-content: center;
+  background-color: #b2a59b;
 }
 
 .header .head {
@@ -21,7 +22,10 @@ body {
   flex-direction: column;
   text-align: start;
   align-items: start;
-  background-color: aliceblue;
+  background-color: #faeed1;
+  filter: drop-shadow(0 0 5px black);
+  border-radius: 2rem;
+  border: solid #faeed1 2px;
 }
 
 .header .head .quastion-Text-Wrap {
@@ -31,6 +35,8 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #ded0b6;
 }
 
 .header .head .quastion-Text-Wrap .quastion-Text {
