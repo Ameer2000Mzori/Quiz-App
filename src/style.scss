@@ -3,7 +3,44 @@
 $fontOne: "Roboto", sans-serif;
 $fontTwo: "Silkscreen", sans-serif;
 
+$colorOne: #faeed1;
+$colorTwo: #ded0b6;
+$colorThree: #b2a59b;
+
 body {
   padding: 0;
   margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+
+  .head {
+    height: 550px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    align-items: start;
+    background-color: aliceblue;
+
+    .quastion-Text-Wrap {
+      height: 15%;
+      width: 100%;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+
+      .quastion-Text {
+        font-size: 25px;
+        font-family: $fontOne;
+      }
+    }
+  }
 }
