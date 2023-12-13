@@ -34,7 +34,7 @@ body {
     border: solid $colorOne 2px;
 
     .quastion-Text-Wrap {
-      height: 15%;
+      height: 25%;
       width: 100%;
       display: flex;
       text-align: center;
@@ -42,15 +42,20 @@ body {
       justify-content: center;
       border-radius: 2rem 2rem 0 0;
       background-color: $colorTwo;
+      border: solid $colorThree 5px;
+      border-left: none;
+      border-right: none;
+      border-top: none;
 
       .quastion-Text {
-        font-size: 25px;
+        font-size: 20px;
         font-family: $fontOne;
+        max-width: 80%;
       }
     }
 
     .quastions-Wrap {
-      height: 50%;
+      height: 75%;
       width: 100%;
       text-align: center;
       align-items: center;
@@ -93,13 +98,19 @@ body {
     }
 
     .button-Wrap {
-      height: 40%;
+      height: 25%;
       width: 100%;
       text-align: center;
       align-items: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background-color: $colorTwo;
+      border-radius: 0 0 2rem 2rem;
+      border: solid $colorThree 5px;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
 
       .submit-Btn {
         padding: 10px 50px;
@@ -112,7 +123,7 @@ body {
       }
 
       .submit-Btn:hover {
-        border: solid $colorTwo 5px;
+        border: solid $colorOne 5px;
         background-color: $colorThree;
         color: $colorOne;
         transform: scale(1.1);
@@ -122,6 +133,7 @@ body {
         transform: scale(0.9);
         background-color: white;
         color: $colorTwo;
+        border: solid $colorThree 5px;
       }
     }
   }

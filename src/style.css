@@ -29,7 +29,7 @@ body {
 }
 
 .header .head .quastion-Text-Wrap {
-  height: 15%;
+  height: 25%;
   width: 100%;
   display: flex;
   text-align: center;
@@ -37,15 +37,20 @@ body {
   justify-content: center;
   border-radius: 2rem 2rem 0 0;
   background-color: #ded0b6;
+  border: solid #b2a59b 5px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
 }
 
 .header .head .quastion-Text-Wrap .quastion-Text {
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Roboto", sans-serif;
+  max-width: 80%;
 }
 
 .header .head .quastions-Wrap {
-  height: 50%;
+  height: 75%;
   width: 100%;
   text-align: center;
   align-items: center;
@@ -88,13 +93,19 @@ body {
 }
 
 .header .head .button-Wrap {
-  height: 40%;
+  height: 25%;
   width: 100%;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #ded0b6;
+  border-radius: 0 0 2rem 2rem;
+  border: solid #b2a59b 5px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }
 
 .header .head .button-Wrap .submit-Btn {
@@ -108,7 +119,7 @@ body {
 }
 
 .header .head .button-Wrap .submit-Btn:hover {
-  border: solid #ded0b6 5px;
+  border: solid #faeed1 5px;
   background-color: #b2a59b;
   color: #faeed1;
   transform: scale(1.1);
@@ -118,4 +129,5 @@ body {
   transform: scale(0.9);
   background-color: white;
   color: #ded0b6;
+  border: solid #b2a59b 5px;
 }
