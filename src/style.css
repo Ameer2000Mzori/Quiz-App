@@ -131,3 +131,10 @@ body {
   color: #ded0b6;
   border: solid #b2a59b 5px;
 }
+
+.p-ElText {
+  font-size: 16px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}

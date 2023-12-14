@@ -6,43 +6,11 @@ var cText = document.getElementsByClassName("c_Text")[0];
 var dText = document.getElementsByClassName("d_Text")[0];
 var submitBtn = document.getElementsByClassName("submit-Btn")[0];
 var answersEl = document.querySelectorAll(".answer");
+var quastionsWrap = document.getElementsByClassName("quastions-Wrap")[0];
 // our gelobal variables
 var currentIndex = 0;
 var goodAnswers = 0;
-// our functions
-var dataListFunction = function () {
-    var questionsCount = QuestionsObject[currentIndex];
-    quastionText.textContent = "".concat(questionsCount.Questions);
-    aText.textContent = "".concat(questionsCount.a);
-    bText.textContent = "".concat(questionsCount.b);
-    cText.textContent = "".concat(questionsCount.c);
-    dText.textContent = "".concat(questionsCount.d);
-};
-// check function for questions
-var checkQuestions = function (answer) {
-    if (answer.checked) {
-        if (answer.id === QuestionsObject[currentIndex].correct) {
-            console.log("that is right");
-            currentIndex += 1;
-            goodAnswers += 1;
-            dataListFunction();
-            answer.checked = false;
-        }
-        else {
-            console.log("that is wrong");
-            currentIndex += 1;
-            dataListFunction();
-            answer.checked = false;
-        }
-    }
-};
-// our event linsters
-submitBtn.addEventListener("click", function () {
-    answersEl.forEach(function (answer) {
-        checkQuestions(answer);
-    });
-});
-dataListFunction();
+var wrongAnswers = 0;
 // our object Quastions
 var QuestionsObject = [
     {
@@ -150,3 +118,56 @@ var QuestionsObject = [
         correct: "C",
     },
 ];
+// our functions
+var dataListFunction = function () {
+    var questionsCount = QuestionsObject[currentIndex];
+    quastionText.textContent = "".concat(questionsCount.Questions);
+    aText.textContent = "".concat(questionsCount.a);
+    bText.textContent = "".concat(questionsCount.b);
+    cText.textContent = "".concat(questionsCount.c);
+    dText.textContent = "".concat(questionsCount.d);
+};
+// check function for questions
+var checkQuestions = function (answer) {
+    if (answer.checked) {
+        if (answer.id === QuestionsObject[currentIndex].correct) {
+            console.log("that is right");
+            currentIndex += 1;
+            goodAnswers += 1;
+            checkFinish();
+            answer.checked = false;
+        }
+        else {
+            console.log("that is wrong");
+            currentIndex += 1;
+            wrongAnswers += 1;
+            checkFinish();
+            answer.checked = false;
+        }
+    }
+};
+// check if finished the questions or not
+var checkFinish = function () {
+    if (currentIndex >= QuestionsObject.length) {
+        quastionText.textContent = "finished!!!";
+        quastionsWrap.innerHTML = "";
+        var goodText = document.createElement("p");
+        goodText.textContent = "you got ".concat(goodAnswers, " answers good");
+        goodText.classList.add("p-ElText");
+        var wrongText = document.createElement("p");
+        wrongText.textContent = "you got ".concat(wrongAnswers, " answers Wrong");
+        wrongText.classList.add("p-ElText");
+        quastionsWrap.appendChild(goodText);
+        quastionsWrap.appendChild(wrongText);
+    }
+    else {
+        dataListFunction();
+    }
+};
+// our event linsters
+submitBtn.addEventListener("click", function () {
+    answersEl.forEach(function (answer) {
+        checkQuestions(answer);
+    });
+});
+dataListFunction();

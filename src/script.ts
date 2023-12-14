@@ -6,50 +6,14 @@ const cText = document.getElementsByClassName("c_Text")[0];
 const dText = document.getElementsByClassName("d_Text")[0];
 const submitBtn = document.getElementsByClassName("submit-Btn")[0];
 const answersEl = document.querySelectorAll(".answer");
+const quastionsWrap = document.getElementsByClassName("quastions-Wrap")[0];
 
 // our gelobal variables
 let currentIndex = 0;
 let goodAnswers = 0;
-
-// our functions
-const dataListFunction = (): void => {
-  let questionsCount = QuestionsObject[currentIndex];
-  quastionText.textContent = `${questionsCount.Questions}`;
-  aText.textContent = `${questionsCount.a}`;
-  bText.textContent = `${questionsCount.b}`;
-  cText.textContent = `${questionsCount.c}`;
-  dText.textContent = `${questionsCount.d}`;
-};
-
-// check function for questions
-const checkQuestions = (answer): void => {
-  if (answer.checked) {
-    if (answer.id === QuestionsObject[currentIndex].correct) {
-      console.log("that is right");
-      currentIndex += 1;
-      goodAnswers += 1;
-      dataListFunction();
-      answer.checked = false;
-    } else {
-      console.log("that is wrong");
-      currentIndex += 1;
-      dataListFunction();
-      answer.checked = false;
-    }
-  }
-};
-
-// our event linsters
-submitBtn.addEventListener("click", () => {
-  answersEl.forEach((answer: any) => {
-    checkQuestions(answer);
-  });
-});
-
-dataListFunction();
+let wrongAnswers = 0;
 
 // our object Quastions
-
 const QuestionsObject = [
   {
     Questions: `what is red?`,
@@ -156,3 +120,62 @@ const QuestionsObject = [
     correct: "C",
   },
 ];
+
+// our functions
+const dataListFunction = (): void => {
+  let questionsCount = QuestionsObject[currentIndex];
+  quastionText.textContent = `${questionsCount.Questions}`;
+  aText.textContent = `${questionsCount.a}`;
+  bText.textContent = `${questionsCount.b}`;
+  cText.textContent = `${questionsCount.c}`;
+  dText.textContent = `${questionsCount.d}`;
+};
+
+// check function for questions
+const checkQuestions = (answer): void => {
+  if (answer.checked) {
+    if (answer.id === QuestionsObject[currentIndex].correct) {
+      console.log("that is right");
+      currentIndex += 1;
+      goodAnswers += 1;
+      checkFinish();
+      answer.checked = false;
+    } else {
+      console.log("that is wrong");
+      currentIndex += 1;
+      wrongAnswers += 1;
+      checkFinish();
+      answer.checked = false;
+    }
+  }
+};
+
+// check if finished the questions or not
+const checkFinish = (): void => {
+  if (currentIndex >= QuestionsObject.length) {
+    quastionText.textContent = `finished!!!`;
+    quastionsWrap.innerHTML = ``;
+
+    const goodText = document.createElement("p");
+    goodText.textContent = `you got ${goodAnswers} answers good`;
+    goodText.classList.add("p-ElText");
+
+    const wrongText = document.createElement("p");
+    wrongText.textContent = `you got ${wrongAnswers} answers Wrong`;
+    wrongText.classList.add("p-ElText");
+
+    quastionsWrap.appendChild(goodText);
+    quastionsWrap.appendChild(wrongText);
+  } else {
+    dataListFunction();
+  }
+};
+
+// our event linsters
+submitBtn.addEventListener("click", () => {
+  answersEl.forEach((answer: any) => {
+    checkQuestions(answer);
+  });
+});
+
+dataListFunction();
