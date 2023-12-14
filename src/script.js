@@ -38,28 +38,35 @@ var QuestionsObject = [
 ];
 // our functions
 var dataListFunction = function () {
-    quastionText.textContent = "".concat(QuestionsObject[currentIndex].Questions);
-    aText.textContent = "".concat(QuestionsObject[currentIndex].a);
-    bText.textContent = "".concat(QuestionsObject[currentIndex].b);
-    cText.textContent = "".concat(QuestionsObject[currentIndex].c);
-    dText.textContent = "".concat(QuestionsObject[currentIndex].d);
+    var questionsCount = QuestionsObject[currentIndex];
+    quastionText.textContent = "".concat(questionsCount.Questions);
+    aText.textContent = "".concat(questionsCount.a);
+    bText.textContent = "".concat(questionsCount.b);
+    cText.textContent = "".concat(questionsCount.c);
+    dText.textContent = "".concat(questionsCount.d);
 };
-dataListFunction();
+// check function for questions
+var checkQuestions = function (answer) {
+    if (answer.checked) {
+        if (answer.id === QuestionsObject[currentIndex].correct) {
+            console.log("that is right");
+            currentIndex += 1;
+            goodAnswers += 1;
+            dataListFunction();
+            answer.checked = false;
+        }
+        else {
+            console.log("that is wrong");
+            currentIndex += 1;
+            dataListFunction();
+            answer.checked = false;
+        }
+    }
+};
 // our event linsters
 submitBtn.addEventListener("click", function () {
     answersEl.forEach(function (answer) {
-        if (answer.checked) {
-            if (answer.id === QuestionsObject[currentIndex].correct) {
-                console.log("that is right");
-                currentIndex += 1;
-                goodAnswers += 1;
-                dataListFunction();
-            }
-            else {
-                console.log("that is wrong");
-                currentIndex += 1;
-                dataListFunction();
-            }
-        }
+        checkQuestions(answer);
     });
 });
+dataListFunction();

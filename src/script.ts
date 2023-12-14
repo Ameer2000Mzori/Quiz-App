@@ -42,29 +42,37 @@ const QuestionsObject = [
 
 // our functions
 const dataListFunction = (): void => {
-  quastionText.textContent = `${QuestionsObject[currentIndex].Questions}`;
-  aText.textContent = `${QuestionsObject[currentIndex].a}`;
-  bText.textContent = `${QuestionsObject[currentIndex].b}`;
-  cText.textContent = `${QuestionsObject[currentIndex].c}`;
-  dText.textContent = `${QuestionsObject[currentIndex].d}`;
+  let questionsCount = QuestionsObject[currentIndex];
+  quastionText.textContent = `${questionsCount.Questions}`;
+  aText.textContent = `${questionsCount.a}`;
+  bText.textContent = `${questionsCount.b}`;
+  cText.textContent = `${questionsCount.c}`;
+  dText.textContent = `${questionsCount.d}`;
 };
 
-dataListFunction();
+// check function for questions
+const checkQuestions = (answer): void => {
+  if (answer.checked) {
+    if (answer.id === QuestionsObject[currentIndex].correct) {
+      console.log("that is right");
+      currentIndex += 1;
+      goodAnswers += 1;
+      dataListFunction();
+      answer.checked = false;
+    } else {
+      console.log("that is wrong");
+      currentIndex += 1;
+      dataListFunction();
+      answer.checked = false;
+    }
+  }
+};
 
 // our event linsters
 submitBtn.addEventListener("click", () => {
   answersEl.forEach((answer: any) => {
-    if (answer.checked) {
-      if (answer.id === QuestionsObject[currentIndex].correct) {
-        console.log("that is right");
-        currentIndex += 1;
-        goodAnswers += 1;
-        dataListFunction();
-      } else {
-        console.log("that is wrong");
-        currentIndex += 1;
-        dataListFunction();
-      }
-    }
+    checkQuestions(answer);
   });
 });
+
+dataListFunction();
