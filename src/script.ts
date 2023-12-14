@@ -7,7 +7,6 @@ const dText = document.getElementsByClassName("d_Text")[0];
 const submitBtn: any = document.getElementsByClassName("submit-Btn")[0];
 const answersEl = document.querySelectorAll(".answer");
 const quastionsWrap = document.getElementsByClassName("quastions-Wrap")[0];
-const buttonWrap = document.getElementsByClassName("button-Wrap")[0];
 
 // our gelobal variables
 let currentIndex = 0;

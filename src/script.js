@@ -7,7 +7,6 @@ var dText = document.getElementsByClassName("d_Text")[0];
 var submitBtn = document.getElementsByClassName("submit-Btn")[0];
 var answersEl = document.querySelectorAll(".answer");
 var quastionsWrap = document.getElementsByClassName("quastions-Wrap")[0];
-var buttonWrap = document.getElementsByClassName("button-Wrap")[0];
 // our gelobal variables
 var currentIndex = 0;
 var goodAnswers = 0;
