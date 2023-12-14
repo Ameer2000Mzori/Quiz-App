@@ -11,35 +11,6 @@ const answersEl = document.querySelectorAll(".answer");
 let currentIndex = 0;
 let goodAnswers = 0;
 
-// our object Quastions
-
-const QuestionsObject = [
-  {
-    Questions: `what is red?`,
-    a: `color`,
-    b: `name`,
-    c: `car`,
-    d: `dance`,
-    correct: "A",
-  },
-  {
-    Questions: `from what is a car created`,
-    a: `plastic`,
-    b: `stone`,
-    c: `metal`,
-    d: `scrab`,
-    correct: "C",
-  },
-  {
-    Questions: `where is The Nehterlands`,
-    a: `Asia`,
-    b: `Europe`,
-    c: `North Amarica`,
-    d: `South Amarica`,
-    correct: "B",
-  },
-];
-
 // our functions
 const dataListFunction = (): void => {
   let questionsCount = QuestionsObject[currentIndex];
@@ -76,3 +47,112 @@ submitBtn.addEventListener("click", () => {
 });
 
 dataListFunction();
+
+// our object Quastions
+
+const QuestionsObject = [
+  {
+    Questions: `what is red?`,
+    a: `color`,
+    b: `name`,
+    c: `car`,
+    d: `dance`,
+    correct: "A",
+  },
+  {
+    Questions: `from what is a car created`,
+    a: `plastic`,
+    b: `stone`,
+    c: `metal`,
+    d: `scrab`,
+    correct: "C",
+  },
+  {
+    Questions: `where is The Nehterlands`,
+    a: `Asia`,
+    b: `Europe`,
+    c: `North Amarica`,
+    d: `South Amarica`,
+    correct: "B",
+  },
+  {
+    Questions: `What is the capital of France?`,
+    a: `Berlin`,
+    b: `Paris`,
+    c: `Madrid`,
+    d: `Rome`,
+    correct: "B",
+  },
+  {
+    Questions: `Which planet is known as the Red Planet?`,
+    a: `Mars`,
+    b: `Jupiter`,
+    c: `Venus`,
+    d: `Saturn`,
+    correct: "A",
+  },
+  {
+    Questions: `What is the largest mammal in the world?`,
+    a: `Elephant`,
+    b: `Giraffe`,
+    c: `Blue Whale`,
+    d: `Hippopotamus`,
+    correct: "C",
+  },
+  {
+    Questions: `In which year did Christopher Columbus reach the Americas?`,
+    a: `1492`,
+    b: `1588`,
+    c: `1776`,
+    d: `1607`,
+    correct: "A",
+  },
+  {
+    Questions: `Which element has the chemical symbol 'O'?`,
+    a: `Osmium`,
+    b: `Oxygen`,
+    c: `Oganesson`,
+    d: `Onium`,
+    correct: "B",
+  },
+  {
+    Questions: `What is the currency of Japan?`,
+    a: `Yuan`,
+    b: `Euro`,
+    c: `Yen`,
+    d: `Dollar`,
+    correct: "C",
+  },
+  {
+    Questions: `Who painted the Mona Lisa?`,
+    a: `Vincent van Gogh`,
+    b: `Leonardo da Vinci`,
+    c: `Pablo Picasso`,
+    d: `Claude Monet`,
+    correct: "B",
+  },
+  {
+    Questions: `Which ocean is the largest?`,
+    a: `Indian Ocean`,
+    b: `Atlantic Ocean`,
+    c: `Southern Ocean`,
+    d: `Pacific Ocean`,
+    correct: "D",
+  },
+  {
+    Questions: `What is the capital of Australia?`,
+    a: `Wellington`,
+    b: `Canberra`,
+    c: `Sydney`,
+    d: `Melbourne`,
+    correct: "B",
+  },
+  {
+    Questions: `What is the main ingredient in guacamole?`,
+    a: `Tomato`,
+    b: `Onion`,
+    c: `Avocado`,
+    d: `Pineapple`,
+    correct: "C",
+  },
+];
