@@ -165,11 +165,8 @@ const checkFinish = (): void => {
     wrongText.textContent = `you got ${wrongAnswers} answers Wrong`;
     wrongText.classList.add("p-ElText");
 
-    const restButton = document.createElement("button");
-    restButton.textContent = `REST THE APP`;
-    restButton.classList.add("submit-Btn");
     submitBtn.style.display = `none`;
-    buttonWrap.appendChild(restButton);
+
     quastionsWrap.appendChild(goodText);
     quastionsWrap.appendChild(wrongText);
   } else {

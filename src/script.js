@@ -158,11 +158,7 @@ var checkFinish = function () {
         var wrongText = document.createElement("p");
         wrongText.textContent = "you got ".concat(wrongAnswers, " answers Wrong");
         wrongText.classList.add("p-ElText");
-        var restButton = document.createElement("button");
-        restButton.textContent = "REST THE APP";
-        restButton.classList.add("submit-Btn");
         submitBtn.style.display = "none";
-        buttonWrap.appendChild(restButton);
         quastionsWrap.appendChild(goodText);
         quastionsWrap.appendChild(wrongText);
     }
