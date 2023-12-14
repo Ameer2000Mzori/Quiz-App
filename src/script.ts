@@ -4,9 +4,10 @@ const aText = document.getElementsByClassName("a_Text")[0];
 const bText = document.getElementsByClassName("b_Text")[0];
 const cText = document.getElementsByClassName("c_Text")[0];
 const dText = document.getElementsByClassName("d_Text")[0];
-const submitBtn = document.getElementsByClassName("submit-Btn")[0];
+const submitBtn: any = document.getElementsByClassName("submit-Btn")[0];
 const answersEl = document.querySelectorAll(".answer");
 const quastionsWrap = document.getElementsByClassName("quastions-Wrap")[0];
+const buttonWrap = document.getElementsByClassName("button-Wrap")[0];
 
 // our gelobal variables
 let currentIndex = 0;
@@ -164,6 +165,11 @@ const checkFinish = (): void => {
     wrongText.textContent = `you got ${wrongAnswers} answers Wrong`;
     wrongText.classList.add("p-ElText");
 
+    const restButton = document.createElement("button");
+    restButton.textContent = `REST THE APP`;
+    restButton.classList.add("submit-Btn");
+    submitBtn.style.display = `none`;
+    buttonWrap.appendChild(restButton);
     quastionsWrap.appendChild(goodText);
     quastionsWrap.appendChild(wrongText);
   } else {

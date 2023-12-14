@@ -7,6 +7,7 @@ var dText = document.getElementsByClassName("d_Text")[0];
 var submitBtn = document.getElementsByClassName("submit-Btn")[0];
 var answersEl = document.querySelectorAll(".answer");
 var quastionsWrap = document.getElementsByClassName("quastions-Wrap")[0];
+var buttonWrap = document.getElementsByClassName("button-Wrap")[0];
 // our gelobal variables
 var currentIndex = 0;
 var goodAnswers = 0;
@@ -157,6 +158,11 @@ var checkFinish = function () {
         var wrongText = document.createElement("p");
         wrongText.textContent = "you got ".concat(wrongAnswers, " answers Wrong");
         wrongText.classList.add("p-ElText");
+        var restButton = document.createElement("button");
+        restButton.textContent = "REST THE APP";
+        restButton.classList.add("submit-Btn");
+        submitBtn.style.display = "none";
+        buttonWrap.appendChild(restButton);
         quastionsWrap.appendChild(goodText);
         quastionsWrap.appendChild(wrongText);
     }
