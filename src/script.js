@@ -37,15 +37,28 @@ var QuestionsObject = [
     },
 ];
 // our functions
+var dataListFunction = function () {
+    quastionText.textContent = "".concat(QuestionsObject[currentIndex].Questions);
+    aText.textContent = "".concat(QuestionsObject[currentIndex].a);
+    bText.textContent = "".concat(QuestionsObject[currentIndex].b);
+    cText.textContent = "".concat(QuestionsObject[currentIndex].c);
+    dText.textContent = "".concat(QuestionsObject[currentIndex].d);
+};
+dataListFunction();
 // our event linsters
 submitBtn.addEventListener("click", function () {
     answersEl.forEach(function (answer) {
         if (answer.checked) {
             if (answer.id === QuestionsObject[currentIndex].correct) {
                 console.log("that is right");
+                currentIndex += 1;
+                goodAnswers += 1;
+                dataListFunction();
             }
             else {
                 console.log("that is wrong");
+                currentIndex += 1;
+                dataListFunction();
             }
         }
     });
